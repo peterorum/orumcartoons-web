@@ -1,3 +1,3 @@
 const fs = require('fs');
 
-fs.copyFileSync('src/index.html', 'build/index.html');
+fs.copyFileSync('src/index.html', 'dist/index.html');
