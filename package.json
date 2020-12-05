@@ -4,7 +4,7 @@
   "description": "Blog for Orum Cartoons",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -w src -e 'html,js,json' generator/generate.js",
+    "start": "nodemon -w src -e 'html,js,json,css' generator/generate.js",
     "serve": "cd dist && live-server"
   },
   "repository": {
