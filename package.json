@@ -4,7 +4,7 @@
   "description": "Blog for Orum Cartoons",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./generator/generate.js"
   },
   "repository": {
     "type": "git",

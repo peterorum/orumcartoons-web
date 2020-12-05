@@ -1,1 +1,1 @@
-* Site for Orum Cartoons statically generated using custok nide, with minimal frameworks.
+# Site for Orum Cartoons statically generated using custok nide, with minimal frameworks.

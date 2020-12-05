@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# file name is title case. folder converted to lower case
+# ./post Cowboys
+
+# exit if error
+set -e
+
+git pull
+
+cd content/blog
+folder=$(echo $1 | tr '[:upper:]' '[:lower:]' | tr '[ ]' '[\-]')
+mkdir -p $folder
+cd $folder
+cp ~/Dropbox/Cartoons/"$1".png .
+echo "---" > index.md
+echo "title: $1" >> index.md
+echo "date: $(date -u "+%Y-%m-%dT%H:%M:%S.000Z")" >> index.md
+echo "description: $1" >> index.md
+echo "---\n" >> index.md >> index.md
+echo "![$1](./$1.png)" >> index.md
+
+cd ../../..
+
+gp "$1"
+
+./deploy
