@@ -15,6 +15,7 @@ function copy(src, dest) {
 
 // home page
 copy("src/index.html", "dist/index.html")
+copy("src/favicon.png", "dist/favicon.png")
 
 // css
 copy("src/styles/", "dist/styles")
