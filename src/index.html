@@ -25,11 +25,45 @@
       <div class="flex header">
         <h1 class="text-4xl flex-grow p-0 m-0">Orum Cartoons</h1>
         <div class="flex w-80 lg:w-60 justify-between toolbar">
-          <div><img src="images/icons/tshirt.svg" /></div>
-          <div><img src="images/icons/facebook.svg" /></div>
-          <div><img src="images/icons/instagram.svg" /></div>
-          <div><img src="images/icons/twitter.svg" /></div>
-          <div><img src="images/icons/share.svg" /></div>
+          <div>
+            <a href="https://orumcartoons.redbubble.com" title="RedBubble shop"
+              ><img src="images/icons/tshirt.svg"
+            /></a>
+          </div>
+          <div>
+            <a href="https://www.facebook.com/orumcartoons"
+              ><img src="images/icons/facebook.svg"
+            /></a>
+          </div>
+          <div>
+            <a href="https://www.instagram.com/orumcartoons"
+              ><img src="images/icons/instagram.svg"
+            /></a>
+          </div>
+          <div>
+            <a href="https://twitter.com/orumcartoons"
+              ><img src="images/icons/twitter.svg"
+            /></a>
+          </div>
+          <div class="md:hidden">
+            <a
+              href="#"
+              onclick='
+                            if (navigator.share) {
+                    navigator
+                      .share({
+                        title: "Orum Cartoons",
+                        text: "Check out Orum Cartoons",
+                        url: "https://www.orumcartoons.com",
+                      })
+                      .then(() => {})
+                      .catch(error => console.log("Error sharing", error))
+                  }
+; return false;'
+              title="Share"
+              ><img src="images/icons/share.svg"
+            /></a>
+          </div>
         </div>
       </div>
     </div>
