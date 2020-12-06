@@ -1,4 +1,5 @@
-const fse = require("fs-extra")
+const fse = require('fs-extra')
+const cartoons = require('../data/cartoons.json')
 
 const isFileChanged = (src, dest) => {
   return (
@@ -13,12 +14,19 @@ function copy(src, dest) {
   fse.copySync(src, dest, { preserveTimestamps: true, filter: isFileChanged })
 }
 
-// home page
-copy("src/index.html", "dist/index.html")
-copy("src/favicon.png", "dist/favicon.png")
-
 // css
-copy("src/styles/", "dist/styles")
+copy('src/styles/', 'dist/styles')
 
 // images
-copy("images/", "dist/images/")
+copy('images/', 'dist/images/')
+copy('src/favicon.png', 'dist/favicon.png')
+
+// process home page
+
+if (isFileChanged('src/index.html', 'dist/index.html')) {
+  let html = fse.readFileSync('src/index.html', 'utf-8')
+
+  html = html.replace(/{ latest-cartoon }/gi, cartoons[0].title)
+
+  fse.writeFileSync('dist/index.html', html)
+}
