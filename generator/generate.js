@@ -1,7 +1,26 @@
-const fs = require('fs');
+const fse = require("fs-extra")
+
+const isFileChanged = (src, dest) => {
+  return (
+    !fse.pathExistsSync(dest) ||
+    (Math.round(fse.statSync(src).mtimeMs),
+    Math.round(fse.statSync(dest).mtimeMs),
+    Math.round(fse.statSync(src).mtimeMs) !==
+      Math.round(fse.statSync(dest).mtimeMs))
+  )
+}
+
+// copy if changed
+
+const copy = (src, dest) => {
+  fse.copySync(src, dest, { preserveTimestamps: true, filter: isFileChanged })
+}
 
 // home page
-fs.copyFileSync('src/index.html', 'dist/index.html');
+copy("src/index.html", "dist/index.html")
 
 // css
-fs.copyFileSync('src/styles/default.css', 'dist/default.css');
+copy("src/styles/", "dist/")
+
+// images
+copy("images/", "dist/images/")

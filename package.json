@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/peterorum/orumcartoons-web/issues"
   },
-  "homepage": "https://github.com/peterorum/orumcartoons-web#readme"
+  "homepage": "https://github.com/peterorum/orumcartoons-web#readme",
+  "devDependencies": {
+    "fs-extra": "^9.0.1"
+  }
 }
