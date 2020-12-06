@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/peterorum/orumcartoons-web#readme",
   "devDependencies": {
+    "eslint": "^7.15.0",
     "fs-extra": "^9.0.1"
   }
 }
