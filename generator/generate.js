@@ -1,5 +1,5 @@
 const fse = require('fs-extra')
-const cartoons = require('../data/cartoons.json')
+const { cartoons } = require('../data/cartoons.js')
 
 const isFileChanged = (src, dest) => {
   return (
